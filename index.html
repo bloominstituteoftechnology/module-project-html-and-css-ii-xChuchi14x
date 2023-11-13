@@ -20,48 +20,54 @@
   4. Improve text rendering
 */
 body {
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
   font-family: Arial, Helvetica, sans-serif;
 }
 #headerTop {
   color: white;
-  padding: 6px;
-  background-color: darkblue;
+  padding: 0.5rem;
+  background-color: rgb(50, 124, 227);
+}
+
+#headerTop > div {
   display: inline-block;
-  margin-right: 5%;
-  font-weight: bold;
+}
+#headerTop > span {
+  margin-right: 0.5rem;
+}
+
+.logo {
   text-transform: uppercase;
+  font-weight: bold;
 }
-
 #headerBottom {
-  display: inline-block;
+  border-bottom: 1px solid gray;
+  padding: 0.5rem;
+  
 }
 
-#headerBottom button {
-  margin: 0;
-  padding: 0;
-  background: none;
-  border: none;
-  margin-right: 10px;
-  cursor: pointer;
 
-}
 
 #headerBottom button.active { 
-font-weight: bolder;
-border-bottom: 2px solid blue;
+font-weight: bold;
+border-bottom: 2px solid #176bad;
 }
 
-#headerBottom > div:first-child {
-  color: white;
-  font-weight: bold;
-  background-color: darkblue;
-  padding: 3.5px;
-  border-radius: 5px;
-  margin-right: 180px;
-  cursor: pointer;
+
+#headerBottom>div {
+  display: inline-block;
 }
+
+
+.blue-btn {
+  color: white;
+  background-color: darkblue;
+  padding: 0.3rem;
+  border-radius: 6px;
+  margin-right: 1rem;
+  cursor: pointer;
+  font-weight: bold;
+}
+
 /*
   5. Improve media defaults
 */
@@ -86,32 +92,26 @@ p, h1, h2, h3, h4, h5, h6 {
 .email > div {
   display: inline-block;
 } 
-.email .email-name,
-.email .email-subject {
+.email-name,
+.email-subject {
   width: 35%;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
-.email .email-check,
-.email .email-date,
-.email .email-size {
+.email-check,
+.email-date,
+.email-size {
   width: 8%;
-  text-align: center;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 .email {
-  padding: 10px 20px 10px 0;
-  border-bottom: 1px solid #ccc;
+  padding: 0.4rem;
+  padding-left: 1rem;
+  border-bottom: 1px solid #c5c5c5;
 }
-
-.email:nthn-child(2) {
+.email:nth-child(2) {
   font-weight: bold;
 }
+
 /*
   8. Create a root stacking context
 */
@@ -180,27 +180,27 @@ p, h1, h2, h3, h4, h5, h6 {
 
 <body>
   <div id="instructions">
-    <h1>HTML & CSS II</h1>
+  <!--  <h1>HTML & CSS II</h1>
     <p>Please load this file in VSCode and Chrome, and open the Elements tab, Sources sub-tab, in Chrome Dev Tools.</p>
     <p>Work through the challenges found inside both style tags in this document.</p>
     <p>You will find a screenshot of the end result inside the design folder.</p>
-    <p>You can now comment out the h1 and the p tags...</p>
+    <p>You can now comment out the h1 and the p tags...</p>-->
   </div>
   <div>
     <header>
       <div id="headerTop">
-        <div>
-          <span>Super Mail</span>
+        <div class="inline-container">
+          <span class="logo">Super Mail</span>
           <span>Jess</span>
         </div>
-        <div>
-          <input type="text" placeholder="Search Mail" />
+        <div class="inline-container">
+        <input type="text" placeholder="Search Mail" />
         </div>
       </div>
       <div id="headerBottom">
-        <div>Compose</div>
+        <div class="blue-btn">Compose</div>
         <div>
-          <button>All mail</button>
+          <button class="active">All mail</button>
           <button>Unread</button>
           <button>Pinned</button>
           <button>VIPs</button>
